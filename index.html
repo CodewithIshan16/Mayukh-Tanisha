@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Tanisha ❤️</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#ff4e78,#ff8fa3);
+    text-align: center;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: red;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity:1; }
+    100% { transform: translateY(-100vh); opacity:0; }
+}
+
+.container {
+    padding: 30px;
+}
+
+h1 {
+    font-size: 3rem;
+    animation: fadeIn 2s;
+}
+
+h2 {
+    margin-top: -10px;
+}
+
+@keyframes fadeIn {
+    from { opacity:0; transform: translateY(30px); }
+    to { opacity:1; transform: translateY(0); }
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Proposal Button */
+.btn {
+    background: white;
+    color: #ff4e78;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* Hidden Message */
+#message {
+    display: none;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Music -->
+<audio autoplay loop>
+    <source src="ishq.mp3" type="audio/mp3">
+</audio>
+
+<div class="container">
+
+<h1>Tanisha ❤️</h1>
+<h2>From Mayukh</h2>
+
+<p>
+You make life more beautiful just by being in it.  
+Every moment with you feels magical.  
+I just want to keep making memories with you forever.
+</p>
+
+<h2>Our Memories 📸</h2>
+
+<div class="gallery">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+    <img src="photo4.jpg">
+    <img src="photo5.jpg">
+  
+</div>
+
+<h2>Special Question 💌</h2>
+
+<button class="btn" onclick="showMessage()">Will You Be Mine? ❤️</button>
+
+<div id="message">
+    Yayyy Tanisha! ❤️  
+    You just made Mayukh the happiest person alive!
+</div>
+
+</div>
+
+<script>
+
+/* Proposal message */
+function showMessage(){
+    document.getElementById("message").style.display = "block";
+}
+
+/* Floating hearts generator */
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = Math.random()*20 + 10 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    },6000);
+
+},500);
+
+</script>
+
+</body>
+</html>
